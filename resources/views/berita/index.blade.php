@@ -23,7 +23,7 @@
 
                     You are logged in! --}}
                     <a href="{{ route('berita.create')}}" class="btn btn-primary">
-                    Tambah 
+                    Tambah
                     </a>
                     <table class="table">
                         <thead>

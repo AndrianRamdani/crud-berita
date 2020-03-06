@@ -10,7 +10,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
+    <script src="{{ asset('js/app.js') }}"></script>
+    @stack ('script')<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -19,6 +20,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+
 </head>
 <body>
     <div id="app">
@@ -38,7 +40,7 @@
                 </a>
                 <a class="navbar-brand" href=" {{ route('kategori.index') }} ">
                     Daftar Kategori
-                </a> 
+                </a>
                 <a class="navbar-brand" href=" {{ route('artikel.index') }} ">
                     Daftar Artikel
                 </a>
@@ -47,7 +49,7 @@
                 </a>
                 <a class="navbar-brand" href=" {{ route('akun.index') }} ">
                     Daftar Akun
-                </a>         
+                </a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
@@ -57,7 +59,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                        <!-- @guest
+                        @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
@@ -65,7 +67,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
-                            @endif -->
+                            @endif
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

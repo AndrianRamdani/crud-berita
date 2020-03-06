@@ -17,7 +17,13 @@
                                     <label for="">Nama</label>
                                 </div>
                                 <div class="col-md-12">
-                                    <input type="text" value="{{$item->nama}}" class="form-control" name="nama" required>
+                                    <select name="nama_id" class="form-control" required>
+                                        @foreach($data->profil as $data)
+                                        <option value="{{$data->profil->id}}"
+                                            {{ $item->id == $akun->nama_id ? "selected" : "" }}>
+                                            {{$data ?? ''->nama}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">Tanggal Lahir</label>

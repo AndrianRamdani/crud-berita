@@ -25,7 +25,8 @@
                                         @foreach($data as $data)
                                         <option value="{{$data->id}}">{{$data->nama}}</option>
                                         @endforeach
-                                    </select>                                </div>
+                                    </select>
+                                </div>
                                 <div class="col-md-6">
                                     <label for="">Tanggal Lahir</label>
                                 </div>

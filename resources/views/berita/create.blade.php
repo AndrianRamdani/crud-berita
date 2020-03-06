@@ -43,7 +43,7 @@
                                 <label for="">Tag</label>
                             </div>
                             <div class="col-md-10">
-                            <select class="form-control pilih-tag" multiple name="tag_id[]">
+                            <select class="form-control pilih-tag" id="js-multiple"  multiple name="id_tag[]">
                                     @foreach ($tag  as $item)
                                         <option value="{{$item->id}}">{{$item->tag}}</option>
                                     @endforeach
@@ -68,7 +68,7 @@
 @endsection
 
 @push('script')
-<script>
+<script type="text/javascript">
     $(document).ready(function()
     {
         $('.pilih-tag').select2();

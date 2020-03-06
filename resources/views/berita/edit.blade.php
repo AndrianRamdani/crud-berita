@@ -38,7 +38,7 @@
                                 <label for="">Tag</label>
                             </div>
                             <div class="col-md-10">
-                            <select class="form-control pilih-tag" multiple name="tag_id[]">
+                            <select class="form-control pilih-tag" id="js-multiple" multiple="multiple" name="tag_id[]">
                                     @foreach($tag as $data)
                                         <option value="{{$data->id}}"
                                             {{ $data->id == $berita->id_tag ? "selected" : "" }}>
@@ -63,3 +63,12 @@
     </div>
 </div>
 @endsection
+
+@push('script')
+<script>
+    $(document).ready(function()
+    {
+        $('#js-multiple').select2();
+    });
+</script>
+@endpush

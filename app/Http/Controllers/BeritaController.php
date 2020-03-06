@@ -16,7 +16,8 @@ class BeritaController extends Controller
     public function index()
     {
         $data = Berita::with('tag')->get();
-        return view ('berita.index',compact('data'));
+        $tag = Tag::All();
+        return view ('berita.index',compact('data','tag'));
     }
 
     /**
@@ -43,8 +44,8 @@ class BeritaController extends Controller
         $berita->deskripsi = $request->deskripsi;
         $berita->foto = $request->foto;
         $berita->tanggal = $request->tanggal;
-        $berita->save();
         $berita->tag()->attach($request->tag);
+        $berita->save();
         return redirect()->route('berita.index')
         ->with(['message' => 'Data Berhasil Disimpan']);
     }
