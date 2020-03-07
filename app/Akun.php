@@ -11,6 +11,6 @@ class Akun extends Model
 
     public function profil()
     {
-        return $this->hasOne('App\Profiel' , 'nama_id');
+        return $this->hasOne('App\Profiel' , 'akun_id');
     }
 }

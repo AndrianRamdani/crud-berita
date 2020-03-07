@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAddFieldBeritas extends Migration
+class CreateTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,20 @@ class CreateAddFieldBeritas extends Migration
      */
     public function up()
     {
-        Schema::create('add_field_beritas', function (Blueprint $table) {
+        Schema::create('tags', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('id_tag');
-            $table->foreign('id_tag')->references('id')
-            ->on('tags')->onDelete('cascade');
+            $table->string('tag');
+            $table->timestamps();
+        });
+        Schema::create('berita_tag', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('id_berita');
+            $table->unsignedBigInteger('id_tag');
+
             $table->foreign('id_berita')->references('id')
-            ->on('beritas')->onDelete('cascade');
+            ->on('beritas');
+            $table->foreign('id_tag')->references('id')
+            ->on('tags');
             $table->timestamps();
         });
     }
@@ -32,6 +38,6 @@ class CreateAddFieldBeritas extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('add_field_beritas');
+        Schema::dropIfExists('tags');
     }
 }

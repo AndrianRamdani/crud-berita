@@ -30,7 +30,7 @@
                             <th>No</th>
                             <th>Judul Berita</th>
                             <th>Deskripsi</th>
-                            <th>Foto</th>
+                            {{-- <th>Foto</th> --}}
                             <th>Tag</th>
                             <th>Tanggal</th>
                             <th>Action</th>
@@ -39,10 +39,10 @@
                             @php $no=1; @endphp
                            @foreach ($data as $item)
                             <tr>
-                                <td>no++</td>
+                                <td>{{$no++}}</td>
                                 <td>{{$item->judul}}</td>
                                 <td>{{$item->deskripsi}}</td>
-                                <td>{{$item->foto}}</td>
+                                {{-- <td>{{$item->foto}}</td> --}}
                                 <td>
                                     <ul>
                                         @foreach ($item->tag as $value)

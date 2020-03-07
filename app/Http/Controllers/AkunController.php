@@ -16,7 +16,8 @@ class AkunController extends Controller
 
     public function create()
     {
-        return view('akun.create');
+        $akun = Akun::all();
+        return view('akun.create', compact('akun'));
     }
 
     public function store(Request $request)

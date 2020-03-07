@@ -15,7 +15,7 @@ class CreateAkunsTable extends Migration
     {
         Schema::create('akuns', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama');
+            $table->string('nama')->unique();
             $table->string('email');
             $table->timestamps();
         });

@@ -22,7 +22,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <select name="nama_id" class="form-control" required>
-                                        @foreach($data as $data)
+                                        @foreach($akun as $data)
                                         <option value="{{$data->id}}">{{$data->nama}}</option>
                                         @endforeach
                                     </select>

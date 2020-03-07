@@ -19,16 +19,16 @@
                             <div class="col-md-4">
                                 <label for="">Judul Berita</label>
                             </div>
-                            <div class="col-md-8">
-                                <input type="text" value="{{$berita->judul}}" name="judul" readonly>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" value="{{$berita->judul}}" name="judul" readonly>
                             </div>
                             <div class="col-md-4">
                                 <label for="">Deskripsi</label>
                             </div>
-                            <div class="col-md-8">
-                                <input type="text" value="{{$berita->deskripsi}}" name="deskripsi" readonly>
+                            <div class="col-md-12">
+                                <textarea type="text" class="form-control" value="{{$berita->deskripsi}}" name="deskripsi" readonly>{{$berita->deskripsi}}</textarea>
                             </div>
-                            <div class="col-md-4">
+                            {{-- <div class="col-md-4">
                                 <label for="">Foto</label>
                             </div>
                             <div class="col-md-10">
@@ -36,16 +36,14 @@
                                     <input type="file" class="custom-file-input" value="{{$item->foto}}" id="customFile" name="foto" readonly>
                                     <label class="custom-file-label" for="customFile">Choose file</label>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="col-md-4">
                                 <label for="">Tag</label>
-                            </div>
-                            <div class="col-md-10">
-                            <select class="form-control pilih-tag" multiple name="tag_id[]">
-                                    @foreach ($berita->tag as $item)
-                                        <li>{{$item->tag}}</li>
-                                    @endforeach
-                            </select>
+                                <ul>
+                                        @foreach ($item->tag as $value)
+                                            <li>{{$value->tag}}</li>
+                                        @endforeach
+                                </ul>
                             </div>
                             <div class="col-md-4">
                                 <label for="">Tanggal</label>

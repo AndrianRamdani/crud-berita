@@ -16,7 +16,6 @@ class BeritaController extends Controller
     public function index()
     {
         $data = Berita::with('tag')->get();
-        $tag = Tag::All();
         return view ('berita.index',compact('data','tag'));
     }
 
@@ -42,10 +41,10 @@ class BeritaController extends Controller
         $berita = new Berita;
         $berita->judul = $request->judul;
         $berita->deskripsi = $request->deskripsi;
-        $berita->foto = $request->foto;
+        // $berita->foto = $request->foto;
         $berita->tanggal = $request->tanggal;
-        $berita->tag()->attach($request->tag);
         $berita->save();
+        $berita->tag()->attach($request->tag);
         return redirect()->route('berita.index')
         ->with(['message' => 'Data Berhasil Disimpan']);
     }
@@ -59,7 +58,8 @@ class BeritaController extends Controller
     public function show($id)
     {
         $berita = Berita::findOrFail($id);
-        return view('berita.show' ,compact('berita'));
+        $selected = $berita->tag->pluck('id')->toArray();
+        return view('berita.show' ,compact('berita','selected'));
     }
 
     /**
@@ -88,7 +88,7 @@ class BeritaController extends Controller
         $berita = Berita::finOrfail($id);
         $berita->judul = $request->judul;
         $berita->deskripsi = $request->deskripsi;
-        $berita->foto = $request->foto;
+        // $berita->foto = $request->foto;
         $berita->tanggal = $request->tanggal;
         $berita->save();
         $berita->tag()->sync($request->tag);
@@ -105,7 +105,7 @@ class BeritaController extends Controller
     public function destroy($id)
     {
         $berita= Berita::findOrFail($id);
-        $berita->tag()->detach($request->tag);
+        $berita->tag()->detach();
         $berita->delete();
         return redirect()->route('berita.index')
               ->with(['message' => 'Data Berhasil Dihapus']);

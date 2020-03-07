@@ -20,13 +20,13 @@
                                     <label for="">Nama</label>
                                 </div>
                                 <div class="col-md-12">
-                                    <input type="text" value="{{$item->nama}}" class="form-control" name="nama" readonly>
+                                    <input type="text" value="{{$akun->nama}}" class="form-control" name="nama" readonly>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">Email</label>
                                 </div>
                                 <div class="col-md-12">
-                                    <input type="email" value="{{$item->email}}" class="form-control" name="email" readonly>
+                                    <input type="email" value="{{$akun->email}}" class="form-control" name="email" readonly>
                                 </div>
                                 {{-- <div class="col-md-6">
                                 <label for="">Pengguna</label>

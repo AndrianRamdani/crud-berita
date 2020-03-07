@@ -18,10 +18,6 @@ class CreateBeritasTable extends Migration
             $table->string('judul')->unique();
             $table->text('deskripsi');
             $table->date('tanggal');
-            // $table->unsignedBigInteger('id_add_field_berita');
-            // $table->foreign('id_add_field_berita')->references('id')
-            // ->on('add_field_beritas')->onDelete('cascade');
-            $table->string('foto');
             $table->timestamps();
         });
     }

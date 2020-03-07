@@ -30,7 +30,7 @@
                             <div class="col-md-10">
                                 <textarea  class="form-control" name="deskripsi" required></textarea>
                             </div>
-                            <div class="col-md-4">
+                            {{-- <div class="col-md-4">
                                 <label for="">Foto</label>
                             </div>
                             <div class="col-md-10">
@@ -38,12 +38,12 @@
                                     <input type="file" class="custom-file-input" id="customFile" name="foto">
                                     <label class="custom-file-label" for="customFile">Choose file</label>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="col-md-4">
                                 <label for="">Tag</label>
                             </div>
                             <div class="col-md-10">
-                            <select class="form-control pilih-tag" id="js-multiple"  multiple name="id_tag[]">
+                            <select class="form-control pilih-tag" id="js-multiple"  multiple name="tag[]">
                                     @foreach ($tag  as $item)
                                         <option value="{{$item->id}}">{{$item->tag}}</option>
                                     @endforeach

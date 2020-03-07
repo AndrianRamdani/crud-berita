@@ -20,27 +20,27 @@
                                     <label for="">Nama</label>
                                 </div>
                                 <div class="col-md-12">
-                                    <input type="text" value="{{$item->nama}}" class="form-control" name="nama" readonly>
+                                    <input type="text" value="{{$profiel->akun->nama}}" class="form-control" name="nama" readonly>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">Tanggal Lahir</label>
                                 </div>
                                 <div class="col-md-12">
-                                    <input type="date" value="{{$item->tgl_lahir}}" class="form-control" name="tgl_lahir" readonly>
+                                    <input type="date" value="{{$profiel->tgl_lahir}}" class="form-control" name="tgl_lahir" readonly>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">Alamat</label>
                                 </div>
                                 <div class="col-md-12">
-                                    <textarea value="{{$item->alamat}}" class="form-control" name="alamat" readonly>
-
+                                    <textarea value="{{$profiel->alamat}}" class="form-control" name="alamat" readonly>
+                                        {{$profiel->alamat}}
                                     </textarea>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">No Telepon</label>
                                 </div>
                                 <div class="col-md-12">
-                                    <input type="number" value="{{$item->no_tlp}}" class="form-control" name="no_tlp" readonly>
+                                    <input type="number" value="{{$profiel->no_tlp}}" class="form-control" name="no_tlp" readonly>
                                 </div>
                         </div>
                 </div>

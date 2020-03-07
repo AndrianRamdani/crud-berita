@@ -15,8 +15,8 @@ class CreateProfielsTable extends Migration
     {
         Schema::create('profiels', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('nama_id');
-            $table->foreign('nama_id')->references('id')
+            $table->unsignedBigInteger('akun_id')->unique();
+            $table->foreign('akun_id')->references('id')
             ->on('akuns')->onDelete('cascade');
             $table->string('tgl_lahir');
             $table->string('alamat');
